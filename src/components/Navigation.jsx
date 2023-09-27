@@ -4,9 +4,10 @@ import SVGLogo from "./SVGLogo";
 import { NavLink } from "react-router-dom";
 
 const NavBar = styled.div`
+  background-color: transparent;
+  position: fixed;
   font-family: Arial;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   font-family: "Barlow Condensed", sans-serif;
   padding-top: 3rem;
@@ -28,6 +29,7 @@ const Line = styled.div`
 
 const Menu = styled.ul`
   display: flex;
+
   list-style: none;
   background: rgb(21, 22, 34);
   background: linear-gradient(
@@ -42,7 +44,6 @@ const Menu = styled.ul`
   padding: 2rem 3rem;
 `;
 
-
 const Navigation = () => {
   return (
     <NavBar>
@@ -54,47 +55,57 @@ const Navigation = () => {
       <Menu>
         <li>
           <NavLink
-         
             to="/"
             style={({ isActive }) => ({
               borderBottom: isActive ? "2px solid white" : "none",
               paddingBottom: "1.8rem",
               paddingTop: "2rem",
-              textDecoration: "none"
+              textDecoration: "none",
             })}
           >
             {" "}
-           00 Home
+            00 Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/destination"   style={({ isActive }) => ({
+          <NavLink
+            to="/destination"
+            style={({ isActive }) => ({
               borderBottom: isActive ? "2px solid white" : "none",
               paddingBottom: "1.8rem",
               paddingTop: "2rem",
-              textDecoration: "none"
-            })}>
+              textDecoration: "none",
+            })}
+          >
             01 Destination
           </NavLink>
         </li>
         <li>
-          <NavLink to="/crew"   style={({ isActive }) => ({
+          <NavLink
+            to="/crew"
+            style={({ isActive }) => ({
               borderBottom: isActive ? "2px solid white" : "none",
               paddingBottom: "1.8rem",
               paddingTop: "2rem",
-              textDecoration: "none"
-            })}>
-             02 Crew
+              textDecoration: "none",
+
+              backgroundColor: isActive ? "red" : "blue",
+            })}
+          >
+            02 Crew
           </NavLink>
         </li>
         <li>
-          <NavLink to="/technology"   style={({ isActive }) => ({
+          <NavLink
+            to="/technology"
+            style={({ isActive }) => ({
               borderBottom: isActive ? "2px solid white" : "none",
               paddingBottom: "1.8rem",
               paddingTop: "2rem",
-              textDecoration: "none"
-            })}>
-           03 Technology
+              textDecoration: "none",
+            })}
+          >
+            03 Technology
           </NavLink>
         </li>
       </Menu>

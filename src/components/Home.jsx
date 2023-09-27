@@ -1,16 +1,24 @@
 import React from "react";
 import styled from "styled-components";
+import backgroundMain from "../assets/home/background-home-desktop.jpg";
 
 const Container = styled.div`
+  background-image: url(${backgroundMain});
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-color: transparent;
   display: flex;
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 5rem;
- 
+
+  #frame {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 15rem;
+  }
 `;
 
-const Left = styled.div`
-`;
+const Left = styled.div``;
 
 const Heading2 = styled.h2`
   font-family: "Barlow Condensed", sans-serif;
@@ -53,19 +61,21 @@ const Explore = styled.div`
 const Home = () => {
   return (
     <Container>
-      <Left>
-        {" "}
-        <Heading2>SO, YOU WANT TO TRAVEL TO</Heading2>
-        <Heading1>SPACE</Heading1>
-        <Paragraph>
-          Let's face it; if you want to go to space, you might as well genuinely
-          go to outer space and not hover kind of on the edge of it. Well sit
-          back, and relax because we'll give you a truly out of this world
-          experience!
-        </Paragraph>
-      </Left>
+      <div id="frame">
+        <Left>
+          {" "}
+          <Heading2>SO, YOU WANT TO TRAVEL TO</Heading2>
+          <Heading1>SPACE</Heading1>
+          <Paragraph>
+            Let's face it; if you want to go to space, you might as well
+            genuinely go to outer space and not hover kind of on the edge of it.
+            Well sit back, and relax because we'll give you a truly out of this
+            world experience!
+          </Paragraph>
+        </Left>
 
-      <Explore>Explore</Explore>
+        <Explore>Explore</Explore>
+      </div>
     </Container>
   );
 };
